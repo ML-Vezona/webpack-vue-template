@@ -1,0 +1,35 @@
+- var url = baseURL
+- var title = "LEXUS TAIWAN │  設計你的電子邀卡";
+//- - var description = ""
+//- - var shareImage = url + "${require(`img/og_share.jpg`)}"
+
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    link(rel="shortcut icon" href="/favicon.ico")
+    if APP_ENV !== 'release'
+      meta(name="robots" content="noindex")
+      meta(name="googlebot" content="noindex")
+    title=title
+    //- link(rel="image_src" type="image/jpeg" href=shareImage)
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no")
+    //- meta(name="description" content=description)
+    meta(property="og:type" content="website")
+    meta(property="og:url" content=url)
+    meta(property="og:title" content=title)
+    //- meta(property="og:description" content=description)
+    //- meta(property="og:image" content=shareImage)
+    link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css")
+    if weinreScript
+      script(src=weinreScript)
+  body
+    #app
+    //- script(src="//code.createjs.com/createjs-2015.11.26.min.js" defer)
+    script(src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js" defer)
+    script(src='//cdnjs.cloudflare.com/ajax/libs/device.js/0.2.7/device.min.js' defer)
+    //- script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js" defer)
+    //- script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/ScrollToPlugin.min.js" defer)
+    //- script(src='//cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js' defer)
+    //- script(src='//cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js' defer)
+  <!--#{VERSION}-->

@@ -1,0 +1,36 @@
+<style lang="stylus" src="./{{ dashCase name }}.styl">
+</style>
+
+<template lang="pug">
+.{{ dashCase name }}-root
+</template>
+
+<script>
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+
+export default {
+  name: '{{ name }}',
+  data: () => ({
+  }),
+  computed: {
+    ...mapState([]),
+    ...mapGetters([]),
+  },
+  methods: {
+    ...mapMutations([]),
+    ...mapActions([]),
+  },
+  beforeRouteEnter(to, from, next) {
+    next();
+  },
+  beforeRouteLeave(to, from, next) {
+    next();
+  },
+  mounted() {
+  },
+  beforeDestroy() {
+  },
+  components: {
+  },
+};
+</script>

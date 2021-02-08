@@ -1,0 +1,35 @@
+@require '~css/reset.styl'
+
+html, body
+  height 100%
+
+body
+  font-family fontHei
+  font-weight 700
+  background #ccc
+  
+
+main
+  display block
+
+*:focus
+  outline none
+a
+  text-decoration none
+
+.left
+  float left
+.right
+  float right
+.clear
+  clear both
+
+.fade-enter-active,
+.fade-leave-active
+  transition opacity 0.2s ease-out
+.fade-enter,
+.fade-leave-to
+  opacity 0
+.fade-leave,
+.fade-enter-to
+  opacity 1

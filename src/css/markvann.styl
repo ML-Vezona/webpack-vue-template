@@ -1,0 +1,87 @@
+rwdS = 480
+rwdM = 750
+rwdL = 990
+rwdX = 1440
+
+fontNoto = "Noto Sans", "Noto Sans CJK TC"
+fontHei = Helvetica, Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "儷黑 Pro", "LiHei Pro", sans-serif
+fontMing = "Times New Roman", "新細明體", "PMingLiU", serif
+fontMono = "Monaco", "Courier New", monospace
+
+easeInBack = cubic-bezier(0.600, -0.280, 0.735, 0.045)
+easeOutBack = cubic-bezier(0.175, 0.885, 0.32, 1.275)
+easeInOutBack = cubic-bezier(0.680, -0.550, 0.265, 1.550)
+easeInCubic = cubic-bezier(0.550, 0.055, 0.675, 0.190)
+easeOutCubic = cubic-bezier(0.215, 0.610, 0.355, 1.000)
+easeInOutCubic = cubic-bezier(0.645, 0.045, 0.355, 1.000)
+
+vw(value)
+  unit(100 * value / 480, 'vw')
+
+absfit()
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+
+imgfit(width, height, file, scale = 100%)
+  height auto
+  bgSize(file, no-repeat, center top, scale)
+  &:before
+    content ""
+    display block
+    width 100%
+    padding-top unit(100 * height / width, '%')
+
+img(width, height, file)
+  width unit(width, 'px')
+  imgfit(width, height, file)
+
+bg(file, repeat = no-repeat, pos = center top)
+  background: url(file) repeat pos
+
+bgColor(color, file, repeat = no-repeat, pos = center top)
+  background: color url(file) repeat pos
+
+bgSize(file, repeat = no-repeat, pos = center top, size = 100%)
+  bg(file, repeat, pos)
+  background-size: size
+
+bgColorSize(color, file, repeat = no-repeat, pos = center top, size = 100%)
+  bgColor(color, file, repeat, pos)
+  background-size: size
+
+portrait()
+  /.tablet &,
+  /.mobile &
+    @media only screen and (orientation: portrait)
+      {block}
+
+landscape()
+  /.tablet &,
+  /.mobile &
+    @media only screen and (orientation: landscape)
+      {block}
+
+mobile()
+  +lessThan(rwdS)
+    {block}
+
+tablet()
+  +lessThan(rwdL)
+    {block}
+
+desktop()
+  +moreThan(rwdL)
+    {block}
+
+lessThan(value)
+  value = unit(value, px)
+  @media only screen and (max-width: value)
+    {block}
+
+moreThan(value)
+  value = unit(value + 1, px)
+  @media only screen and (min-width: value)
+    {block}

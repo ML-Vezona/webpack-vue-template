@@ -1,0 +1,8 @@
+{
+  "browserslist": [
+    "last 5 versions",
+    "iOS >=10",
+    "not ie <= 11",
+    ">3%"
+  ]
+}
